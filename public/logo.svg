@@ -1,0 +1,22 @@
+<svg width="200" height="500" viewBox="0 0 200 500" xmlns="http://www.w3.org/2000/svg">
+  <!-- Fork -->
+  <path d="M65,50 L65,200 L70,200 L70,150 L75,150 L75,200 L80,200 L80,150 L85,150 L85,200 L90,200 L90,50 Z" fill="#4CAF50"/>
+
+  <!-- Knife -->
+  <path d="M100,50 L105,200 L110,200 L115,50 Z" fill="#F44336"/>
+
+  <!-- Spoon -->
+  <ellipse cx="135" cy="110" rx="15" ry="35" fill="#FFC107"/>
+  <rect x="130" y="150" width="10" height="100" fill="#FFC107"/>
+
+  <!-- Rocket Body -->
+  <rect x="85" y="250" width="30" height="150" fill="#424242"/>
+  <polygon points="70,400 130,400 100,450" fill="#424242"/>
+
+  <!-- Rocket Flames -->
+  <path d="M85,400 C95,420 105,420 115,400" fill="#FF5722"/>
+  <path d="M90,400 C95,410 105,410 110,400" fill="#FF9800"/>
+
+  <!-- Fin Detailing -->
+  <rect x="85" y="250" width="30" height="10" fill="#616161"/>
+</svg>
