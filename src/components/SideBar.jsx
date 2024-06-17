@@ -1,8 +1,12 @@
-import { Heart, Home } from "lucide-react"
-import { Link } from "react-router-dom"
+import { Heart, Home, LogOut } from "lucide-react"
+import { useContext } from "react"
+import { Link, useNavigate } from "react-router-dom"
+import { AppContext } from "../context/Appcontex"
 
 
 function SideBar() {
+
+  
   return (
     <>
       <DesktopSideBar/>
@@ -16,6 +20,20 @@ export default SideBar
 
 function DesktopSideBar()
 {
+  const{user,logOut}=useContext(AppContext)
+  const navigate=useNavigate()
+  console.log(user?.email);
+
+  async function hadelLogOut()
+  {
+    try {
+      await logOut()
+      navigate("/login")
+    } catch (error) {
+      console.log(error.message);
+      console.log(error);
+    }
+  }
   return(
     <div className="p-3  md:p-6 border-r border-black min-h-screen w-24 md:w-60 hidden sm:block">
       <div className="flex flex-col sticky top-7 left-0 ">
@@ -28,10 +46,21 @@ function DesktopSideBar()
           <Home size={"24"}/>
           <span className=" font-bold hidden md:block ">Home</span>
           </Link>
+
           <Link to={"/favorites"} className="flex gap-1">
           <Heart size={"24"}/>
           <span className=" font-bold hidden md:block ">Favorites</span>
           </Link>
+         
+          {/* <Link onClick={hadelLogOut} className="flex gap-1">
+          <LogOut  size={"24"}/>
+          <span className=" font-bold hidden md:block ">Log Out</span>
+          </Link> */}
+
+          {user?.email&&<Link onClick={hadelLogOut} className="flex gap-1">
+          <LogOut  size={"24"}/>
+          <span className=" font-bold hidden md:block ">Log Out</span>
+          </Link>}
         </ul> 
       </div>
     </div>
@@ -42,6 +71,23 @@ function DesktopSideBar()
 
 function MobileSideBar()
 {
+  const{user,logOut}=useContext(AppContext)
+  const navigate=useNavigate()
+  console.log(user?.email);
+
+
+  async function hadelLogOut()
+  {
+    try {
+      await logOut()
+      
+      navigate("/login")
+      
+    } catch (error) {
+      console.log(error.message);
+      console.log(error);
+    }
+  }
   return(
     <div className="flex justify-center gap-10 border-t fixed w-full bottom-0 left-0 bg-white z-10 p-2 sm:hidden">
       <Link to={"/"}>
@@ -50,6 +96,14 @@ function MobileSideBar()
       <Link to={"/favorites"}>
         <Heart size={"24"} className=" cursor-pointer"/>
       </Link>
+      {/* <Link onClick={hadelLogOut} className="flex gap-1">
+          <LogOut  size={"24"}/>
+          <span className=" font-bold hidden md:block ">Log Out</span>
+          </Link> */}
+           {user?.email&&<Link onClick={hadelLogOut} className="flex gap-1">
+          <LogOut  size={"24"}/>
+          <span className=" font-bold hidden md:block ">Log Out</span>
+          </Link>}
     </div>
   )
 }
