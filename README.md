@@ -8,4 +8,4 @@ Currently, two official plugins are available:
 - [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
 
 
-Api documentation: [text](https://developer.edamam.com/recipe-search-api-v2-changelog)
+Api documentation: (https://developer.edamam.com/recipe-search-api-v2-changelog)
