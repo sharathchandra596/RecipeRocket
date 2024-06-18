@@ -3,6 +3,7 @@ import { AppContext } from "../../context/Appcontex";
 import { useNavigate } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
+import google_logo from '../../../public/google.svg'
 
 import desk_logo from '../../../public/desk_logo.png'
 
@@ -42,7 +43,7 @@ function Login() {
           onClick={handelSignUp}
           className="mt-5 w-50 p-3 h-16  border border-black text-xl flex  items-center rounded-md hover:bg-yellow-200 "
         >
-          <img className="" src="/public/google.svg" width={"40px"} alt="" />
+          <img className="" src={google_logo} width={"40px"} alt="" />
           <span className="text-2xl ml-9"> Log in with Google</span>
         </button>
       </div>
