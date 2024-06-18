@@ -3,7 +3,7 @@ import { useContext } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { AppContext } from "../context/Appcontex"
 import mobile_logo from "../../public/mobile_logo.png"
-import desk_logo from '../../../public/desk_logo.png'
+import desk_logo from '../../public/desk_logo.png'
 
 
 function SideBar() {
