@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import { doc, setDoc } from "firebase/firestore";
 import { db } from "../../firebase/firebase";
 
+import desk_logo from '../../../public/desk_logo.png'
+
 function Login() {
   const {user,signUp } = useContext(AppContext);
   const navigate = useNavigate();
@@ -35,7 +37,7 @@ function Login() {
       </div>
 
       <div className="flex flex-col  justify-center items-center">
-        <img src="/public/desk_logo.png" alt="logo" />
+        <img src={desk_logo} alt="logo" />
         <button
           onClick={handelSignUp}
           className="mt-5 w-50 p-3 h-16  border border-black text-xl flex  items-center rounded-md hover:bg-yellow-200 "

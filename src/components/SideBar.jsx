@@ -2,6 +2,8 @@ import { Heart, Home, LogOut } from "lucide-react"
 import { useContext } from "react"
 import { Link, useNavigate } from "react-router-dom"
 import { AppContext } from "../context/Appcontex"
+import mobile_logo from "../../public/mobile_logo.png"
+import desk_logo from '../../../public/desk_logo.png'
 
 
 function SideBar() {
@@ -38,8 +40,8 @@ function DesktopSideBar()
     <div className="p-3  md:p-6 border-r border-black min-h-screen w-24 md:w-60 hidden sm:block">
       <div className="flex flex-col sticky top-7 left-0 ">
         <div className="w-full ">
-          <img src="/public/desk_logo.png" width={"200px"} alt="logo" className=" hidden  md:block w-full " />
-          <img src="/public/mobile_logo.png" width={"200px"} alt="logo" className=" block md:hidden " />
+          <img src={desk_logo} width={"200px"} alt="logo" className=" hidden  md:block w-full " />
+          <img src={mobile_logo} width={"200px"} alt="logo" className=" block md:hidden " />
         </div>
         <ul className="flex flex-col items-center md:items-start gap-8">
           <Link to={"/"} className="flex gap-1">
